@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from "react";
 
 function TargetIcon() {
   return (
@@ -32,4 +31,4 @@ function TargetIcon() {
   );
 }
 
-export default TargetIcon
+export default TargetIcon;

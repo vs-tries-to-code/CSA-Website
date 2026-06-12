@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function LogoMark() {
   return (
@@ -33,4 +33,4 @@ function LogoMark() {
   );
 }
 
-export default LogoMark
+export default LogoMark;

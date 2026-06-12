@@ -2,7 +2,7 @@ import React from "react";
 import LogoMark from "./components/LogoMark";
 import TargetIcon from "./components/TargetIcon";
 import HeroArtwork from "./components/HeroArtwork";
-import './styles.css'
+import "./styles.css";
 
 const navItems = [
   "About",
@@ -46,7 +46,13 @@ function App() {
 
       <section id="home" className="hero">
         <div className="hero-copy">
-          <h1 className="home-h1">COMPUTER<br />SCIENCE &amp;<br />ENGINEERING</h1>
+          <h1 className="home-h1">
+            COMPUTER
+            <br />
+            SCIENCE &amp;
+            <br />
+            ENGINEERING
+          </h1>
 
           <p>
             A central space for students, faculty and alumni to stay connected
