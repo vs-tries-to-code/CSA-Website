@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import LogoMark from "./components/LogoMark";
+
 import TargetIcon from "./components/TargetIcon";
 import HeroArtwork from "./components/HeroArtwork";
+import csaLogo from './assets/csa_logo.svg'
 import "./styles.css";
+
 
 const navItems = [
   "About",
@@ -35,13 +37,14 @@ function App() {
       />
 
       <header className="topbar" aria-label="Primary">
-        <a
+        <img
+          src={csaLogo}
           className="brand"
           href="#"
           aria-label="Computer Science Association CET home"
-        >
-          <LogoMark />
-        </a>
+        />
+          
+        
 
         <nav
           className={`nav-pills ${isMenuOpen ? "is-open" : ""}`}
