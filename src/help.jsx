@@ -38,6 +38,7 @@ function Help(){
                         <p>{contact.role}</p>
                         <p>{contact.phoneNo}</p>
                         <a href='{mailto:${contact.mail}'>{contact.mail}</a>
+                        <p className="footer">© CS Association 2025 - 26</p>
                     </div>
     ))}
         </div>
