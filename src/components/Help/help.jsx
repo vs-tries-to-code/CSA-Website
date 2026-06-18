@@ -33,16 +33,27 @@ function Help(){
     return (
         <main className ="help-page">
         <Navbar />
+        <div className="help-heading-wrapper">
+        <span className="help-line-v left" />
+        <span className="help-line-v right" />
+        <span className="help-line-h top" />
+        <span className="help-line-h bottom" />
         <h1 className="help-heading">Help</h1>
+      </div>
         <p className="description">Questions, concerns or suggestions? Get in touch with us</p>
         <div className = "contact-flex">
             {
                 contacts.map((contact) => (
                     <div key={contact.id} className="contact">
+                    <div className="contact-identity-group">
                         <p className="contact-name">{contact.name}</p>
                         <p className="contact-role">{contact.role}</p>
-                        <p  className="contact-phone">{contact.phoneNo}</p>
+                    </div>
+
+                    <div className="contact-details-group">
+                        <p className="contact-phone">{contact.phoneNo}</p>
                         <a href={`mailto:${contact.mail}`} className="contact-mail">{contact.mail}</a>
+                        </div>
                     </div>
     ))}
         </div>
