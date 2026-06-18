@@ -21,60 +21,133 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-bottom: 6rem; 
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.help-heading-wrapper {
+  position: relative;
+  display: inline-block; 
+  margin-top: 80px;
 }
 
 .help-heading {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(5rem, 12vw, 12rem);
-  letter-spacing: -0.08em;
-  color: var(--color-text);
+  font-size: 203px;
   line-height: 1;
+  letter-spacing: -0.08em; /* Compresses letter space inward */
+  color: #202020;
   margin: 0;
+  padding: 0;        
+}
+
+/* Vertical Grid Lines */
+.help-line-v {
+  position: absolute;
+  width: 2px;
+  background-color: #202020;
+  top: -10px;
+  bottom: -10px;
+}
+
+.help-line-v.left {
+  left: 12px;
+}
+
+.help-line-v.right {
+  right: -10px;
+}
+
+
+.help-line-h {
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  height: 2px;         
+  background: var(--color-text);
+  z-index: 1;
+}
+
+.help-line-h.top {
+  top: 34%;             
+}
+
+.help-line-h.bottom {
+  bottom: 8.3%;          
 }
 
 .description {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  font-size: clamp(5rem, 12vw, 12rem);
-  letter-spacing: -0.08em;
+  font-size: clamp(1.2rem, 2.5vw, 2.8rem);
+  letter-spacing: -0.05em;
   color: var(--color-text);
-  line-height: 1;
-  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  margin: 3rem 0;       
+  width: 90%;
+  max-width: 1400px;
 }
 
 .contact-flex {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: clamp(2rem, 10vw, 14rem);
+  gap: clamp(2rem, 6vw, 12rem); 
   width: 90%;
+  max-width: 1448px;
+  margin-bottom: 4rem;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  text-align: center;
+  gap: 28px; 
+  width: 332px;
+}
+
+.contact-identity-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  width: 100%;
 }
 
 .contact-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  letter-spacing: -4px;
+  font-size: clamp(1.4rem, 2.2vw, 2.8rem);
+  letter-spacing: -2px;
   color: var(--color-text);
   text-align: center;
-  
+  margin: 0 0 0.4rem 0;
 }
 
 .contact-role {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
-  font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
   text-align: center;
   color: var(--color-text);
+  margin: 0 0 1rem 0;
+}
+
+.contact-details-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px; /* Tiny micro gap between phone number and email */
+  width: 100%;
+}
+
+.contact-name, .contact-role, .contact-phone, .contact-mail {
+  margin: 0;
 }
 
 .contact-phone,
@@ -94,8 +167,13 @@
   text-decoration: underline;
 }
 
+.contact p, 
+.contact a {
+  margin : 0;
+}
+
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -106,10 +184,11 @@
   justify-content: center;
 }
 
-.help-footer p {
+.footer p {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   color: #836C5A;
+  margin: 0;
 }
