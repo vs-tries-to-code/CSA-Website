@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import csaLogo from "./assets/csa_logo.svg";
+import Navbar from "../home/Navbar/Navbar";
 
 const achievements = [
      {
@@ -62,7 +63,7 @@ function Achievements(){
 
     return (
     <main className="achievements-page">
-
+      <Navbar/>
       <h1 className="achievements-heading">Achievements</h1>
 
       <div className="carousel">
