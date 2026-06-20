@@ -8,7 +8,7 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.4rem 2.2rem;
+  padding: 1rem 2.2rem;
   transition:
     padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -20,7 +20,7 @@
 }
 
 .topbar.is-scrolled {
-  padding: 0.8rem 2.2rem;
+  padding: 0.55rem 2.2rem;
   background: rgba(75, 59, 66, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -330,9 +330,9 @@
 @media (max-width: 780px) {
   .topbar {
     grid-template-columns: auto 1fr auto;
-    padding: 1rem var(--mobile-gutter);
+    padding: 0.75rem var(--mobile-gutter);
   }
   .topbar.is-scrolled {
-    padding: 0.8rem var(--mobile-gutter);
+    padding: 0.5rem var(--mobile-gutter);
   }
 }
