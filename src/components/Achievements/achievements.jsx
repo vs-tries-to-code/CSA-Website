@@ -64,7 +64,17 @@ function Achievements(){
     return (
     <main className="achievements-page">
       <Navbar/>
-      <h1 className="achievements-heading">Achievements</h1>
+      <div className="title-section">
+          <div className="title-frame">
+            <div className='line left'></div>
+            <h1 className="title">Resources</h1>
+            <div className='line right'></div>
+          </div>
+          <div className="border-frame">
+            <div className='top'></div>
+            <div className='bottom'></div>
+          </div>
+        </div>
 
       <div className="carousel">
 
