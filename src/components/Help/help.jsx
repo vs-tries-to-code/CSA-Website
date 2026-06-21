@@ -32,10 +32,6 @@ function Help(){
     return (
         <main className ="help-page">
         <div className="title-section">
-        <div className="border-frame">
-            <div className="top" />
-            <div className="bottom" />
-        </div>
         <div className="title-frame">
             <span className="line left" />                                                                              
             <h1 className="title">Help</h1>
