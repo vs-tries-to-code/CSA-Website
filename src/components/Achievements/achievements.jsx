@@ -7,7 +7,7 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: null,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 2,
@@ -15,7 +15,7 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: null,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 3,
@@ -23,7 +23,7 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: null,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 4,
@@ -31,76 +31,77 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: null,
+    image: "/src/assets/achievements1.png",
   },
 
 ];
 
 function Achievements(){
-    const [index, setIndex] = useState(0);
-    
-    const goRight = () => {
-        if (index === achievements.length - 1){
-            setIndex(0);
-        }
-        else{
-            setIndex(index + 1);
-        }
-    };
+  const [index, setIndex] = useState(0);
 
-    const goLeft = () => {
-        if (index === 0){
-            setIndex(achievements.length - 1);
-        }
-        else{
-            setIndex(index - 1);
-        }
-    };
+  const goRight = () => setIndex((index + 1) % achievements.length);
+  const goLeft = () => setIndex((index - 1 + achievements.length) % achievements.length);
 
-    const current = achievements[index];
+  const current = achievements[index];
 
     return (
     <main className="achievements-page">
-      <div className="title-section">
-          <div className="title-frame">
-            <div className='line left'></div>
+        <div className="title-section">
+        <div className="title-frame">
+            <span className="line left" />                                                                              
             <h1 className="title">Achievements</h1>
-            <div className='line right'></div>
-          </div>
+            <span className="line right" />
+        </div>
+        </div>
           <div className="border-frame">
             <div className='top'></div>
             <div className='bottom'></div>
           </div>
+
+      <section className="carousel">
+          {/* decorative cards */}
+        <div className="edge-stack edge-stack--left" aria-hidden="true">
+          <div className="edge-card edge-card--1" />
+          <div className="edge-card edge-card--2" />
+          <div className="edge-card edge-card--3" />
         </div>
 
-      <div className="carousel">
+        <div className="edge-stack edge-stack--right" aria-hidden="true">
+          <div className="edge-card edge-card--1" />
+          <div className="edge-card edge-card--2" />
+          <div className="edge-card edge-card--3" />
+        </div>
 
-        <button className="carousel-arrow left" onClick={goLeft}>
-          ‹
+        
+        <button className="arrow-btn arrow-btn--left" onClick={goLeft} aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
         </button>
 
-        <div className="carousel-poster">
-          {current.image ? (
-            <img src={current.image} alt={current.name} />
-          ) : (
-            <div className="poster-placeholder">
-              <span>{current.name}</span>
+        <div className="carousel-inner">
+          <div className="poster-wrap">
+            <div className="poster-card">
+              {current.image
+                ? <img src={current.image} alt={current.name} className="poster-img" />
+                : <div className="poster-placeholder"><span>{current.name[0]}</span></div>
+              }
             </div>
-          )}
+          </div>
+          
+          <div className="detail-panel">
+            <h2 className="detail-name">{current.name}</h2>
+            <p className="detail-category">{current.category}</p>
+            <p className="detail-desc">{current.description}</p>
+          </div>
         </div>
 
-        <div className="carousel-detail">
-          <h2>{current.name}</h2>
-          <p className="carousel-category">{current.category}</p>
-          <p className="carousel-description">{current.description}</p>
-        </div>
-
-        <button className="carousel-arrow right" onClick={goRight}>
-          ›
+        <button className="arrow-btn arrow-btn--right" onClick={goRight} aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
         </button>
-
-      </div>
-
+    </section>
     </main>
   );
 }
