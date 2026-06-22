@@ -1,6 +1,6 @@
 import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
-import Resources from "./components/home/Resource/Resources";
+import Resources from "./components/Resource/Resources";
 import Help from "./components/Help/help";
 import "./styles.css";
 

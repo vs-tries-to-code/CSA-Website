@@ -32,8 +32,8 @@
   /* margin-top:400px; */
   font-family: var(--sans);
   color: var(--text-primary);
-  /* padding-bottom: 180px; */
-  min-height: 100vh;
+  padding-bottom: 140px;
+  /* min-height: 80vh; */
 }
 
 .title-section {
@@ -133,7 +133,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   background-color: var(--resources-bg-secondary);
   margin-bottom: 2px;
 }
