@@ -57,7 +57,7 @@ function Achievements(){
         }
     };
 
-    const curr = achievements[index];
+    const current = achievements[index];
 
     return (
     <main className="achievements-page">
