@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./achievements.css";
 
 const achievements = [
      {
@@ -11,24 +12,24 @@ const achievements = [
   },
    {
     id: 2,
-    name: "Johan Varghese K",
-    category: "Research Paper Publication",
+    name: "Jane Doe",
+    category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
     image: "/src/assets/achievements1.png",
   },
    {
     id: 3,
-    name: "Johan Varghese K",
-    category: "Research Paper Publication",
+    name: "John Doe",
+    category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
     image: "/src/assets/achievements1.png",
   },
    {
     id: 4,
-    name: "Johan Varghese K",
-    category: "Research Paper Publication",
+    name: "Someone",
+    category: "Coding Competition Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
     image: "/src/assets/achievements1.png",
@@ -61,15 +62,15 @@ function Achievements(){
       <section className="carousel">
           {/* decorative cards */}
         <div className="edge-stack edge-stack--left" aria-hidden="true">
-          <div className="edge-card edge-card--1" />
-          <div className="edge-card edge-card--2" />
-          <div className="edge-card edge-card--3" />
+          <img className="edge-card edge-card--1" src="/src/assets/achievements1.png" />
+          <div className="edge-card edge-card--2" src="/src/assets/achievements1.png"/>
+          <div className="edge-card edge-card--3" src="/src/assets/achievements1.png"/>
         </div>
 
         <div className="edge-stack edge-stack--right" aria-hidden="true">
-          <div className="edge-card edge-card--1" />
-          <div className="edge-card edge-card--2" />
-          <div className="edge-card edge-card--3" />
+          <div className="edge-card edge-card--1" src="/src/assets/achievements1.png"/>
+          <div className="edge-card edge-card--2" src="/src/assets/achievements1.png"/>
+          <div className="edge-card edge-card--3" src="/src/assets/achievements1.png"/>
         </div>
 
         
@@ -80,15 +81,13 @@ function Achievements(){
         </button>
 
         <div className="carousel-inner">
-          <div className="poster-wrap">
             <div className="poster-card">
               {current.image
                 ? <img src={current.image} alt={current.name} className="poster-img" />
                 : <div className="poster-placeholder"><span>{current.name[0]}</span></div>
               }
             </div>
-          </div>
-          
+
           <div className="detail-panel">
             <h2 className="detail-name">{current.name}</h2>
             <p className="detail-category">{current.category}</p>
