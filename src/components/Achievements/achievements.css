@@ -25,7 +25,8 @@
   background-color: var(--bg-color);
   font-family: 'Plus Jakarta Sans';
   color: var(--text-primary);
-  padding-bottom: 180px;
+  padding-bottom: clamp(4rem, 12vw, 11.25rem);
+  overflow-x: hidden;
 }
 
 .title-section {
@@ -80,28 +81,31 @@
 }
 
 .carousel {
-  position: relative;         
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  width: 100%;
 }
 
 .edge-stack {
+  --stack-w: clamp(8rem, 17vw, 15rem);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 240px;
-  height: 380px;
+  width: var(--stack-w);
+  height: clamp(14rem, 27vw, 23.75rem);
+  z-index: 0;
 }
-.edge-stack--left  { left: -15vw; }   
-.edge-stack--right { right: -15vw; }  
+
+.edge-stack--left  { left:  calc(var(--stack-w) * -0.6); }
+.edge-stack--right { right: calc(var(--stack-w) * -0.6); }
 
 .edge-card {
   position: absolute;
-  width: 220px;
-  height: 320px;
-  border-radius: 28px;
+  width: clamp(7.5rem, 15vw, 13.75rem);
+  height: clamp(12rem, 22vw, 20rem);
+  border-radius: clamp(0.875rem, 2vw, 1.75rem);
   background: #e8e0d6;
   box-shadow:
     0px -8px 17px rgba(0,0,0,0.10),
@@ -113,13 +117,14 @@
 .edge-stack--left  .edge-card { transform: rotate(15deg); }
 .edge-stack--right .edge-card { transform: rotate(-15deg); }
 
-.edge-card--1 { top: 0;   background: #cfc8bf; } 
-.edge-card--2 { top: 60px; background: #ddd6cc; }
-.edge-card--3 { top: 120px; background: #ece7e1; } 
+.edge-card--1 { top: 0;   background: #cfc8bf; }
+.edge-card--2 { top: 16%; background: #ddd6cc; }
+.edge-card--3 { top: 32%; background: #ece7e1; }
 
 .arrow-btn {
   flex-shrink: 0;
-  width: 60px; height: 60px;
+  width: clamp(2.25rem, 4.5vw, 3.75rem);
+  height: clamp(2.25rem, 4.5vw, 3.75rem);
   border-radius: 50%;
   border: 2.5px solid var(--c-ink);
   background: transparent;
@@ -129,35 +134,46 @@
   color: var(--c-ink);
   z-index: 2;
 }
-.arrow-btn svg { width: 22px; height: 22px; }
+.arrow-btn svg {
+  width: clamp(0.9rem, 1.5vw, 1.375rem);
+  height: clamp(0.9rem, 1.5vw, 1.375rem);
+}
 .arrow-btn:hover { background: var(--c-ink); color: var(--c-warm); }
+
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  z-index: 1;
+  position: relative;
+}
 
 .carousel-inner {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 56px;
-  max-width: 1000px;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  max-width: min(62.5rem, 85vw);
 }
 
 .poster-card {
-  position: relative;   
-  z-index: 2;           
-  width: 100%;
-  height: 100%;
-  border-radius: 28px;
-  overflow: hidden;
-  background: var(--bg-color);
-  
+  flex-shrink: 0;
+  width: clamp(14rem, 28vw, 22rem);
+  height: clamp(18rem, 37vw, 29rem);
 }
+
 .poster-img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: clamp(0.875rem, 2vw, 1.75rem);
   box-shadow:
-    0px 15px 33px rgba(0,0,0,0.10),
-    0px 59px 59px rgba(0,0,0,0.09),
-    0px 134px 80px rgba(0,0,0,0.05);
+    0px 15px 33px 0px #00000019,
+    0px 59px 59px 0px #00000017,
+    0px 134px 80px 0px #0000000D,
+    0px 237px 95px 0px #00000003,
+    0px 371px 104px 0px #00000000;
 }
 
 .poster-placeholder {
@@ -168,13 +184,13 @@
 }
 
 .detail-panel {
-  max-width: 560px;
+  max-width: min(35rem, 90%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(0.4rem, 0.8vw, 0.625rem);
 }
 .detail-name {
-  font-size: clamp(2.4rem, 5.5vw, 5.4rem);
+  font-size: clamp(1.5rem, 4.5vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.08em;
   line-height: 1;
@@ -198,10 +214,21 @@
 }
 
 @media (max-width: 768px) {
-  .carousel-section { flex-direction: column; padding: 40px 20px 80px; }
+  .carousel-section { flex-direction: column; padding: 2.5rem 1.25rem 5rem; }
   .carousel-inner { flex-direction: column; }
-  .poster-wrap { width: 260px; height: 340px; }
-  .edge-stack { display: none; }
+  .poster-card { width: min(16.25rem, 80vw); height: min(21.25rem, 105vw); }
+  .poster-img { border-radius: clamp(0.75rem, 3vw, 1rem); }
+
+  /* anchor arrows to the top of the track, then offset down to poster's vertical center */
+  .carousel-track { align-items: flex-start; }
+  .arrow-btn {
+    margin-top: calc(
+      (min(21.25rem, 105vw) - clamp(2.25rem, 4.5vw, 3.75rem)) / 2
+    );
+  }
+
+  .edge-stack--left  { left:  calc(var(--stack-w) * -0.75); }
+  .edge-stack--right { right: calc(var(--stack-w) * -0.75); }
   .title-section::before { top: 52%; }
   .title-section::after  { top: 78%; }
 }
