@@ -104,20 +104,15 @@ section[id] {
 }
 
 .csa-earth-section {
-  background:
-    linear-gradient(rgba(32, 32, 32, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 32, 32, 0.028) 1px, transparent 1px),
-    radial-gradient(circle at 20% 24%, rgba(255, 235, 210, 0.08), transparent 28%),
-    radial-gradient(circle at 74% 72%, rgba(35, 28, 26, 0.16), transparent 34%),
-    var(--csa-earth-bg);
-  background-size:
-    7px 7px,
-    7px 7px,
-    auto,
-    auto,
-    auto;
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 5.2rem);
+  overflow: hidden;
+  background: var(--csa-earth-bg);
   color: var(--csa-earth-text);
   font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  scroll-margin-top: 5.2rem;
+  padding: clamp(3.2rem, 6vw, 5rem) 0 clamp(3.6rem, 6vw, 5rem);
 }
 
 .csa-section-heading {
@@ -208,7 +203,7 @@ section[id] {
 }
 
 .csa-heading-dino {
-  --csa-heading-dino-size: clamp(1.85rem, 3.2vw, 3.5rem);
+  --csa-heading-dino-size: clamp(1.15rem, 3.2vw, 3.5rem);
   width: var(--csa-heading-dino-size);
   height: var(--csa-heading-dino-size);
   right: clamp(4.4rem, 11vw, 11.2rem);
@@ -217,18 +212,23 @@ section[id] {
 }
 
 .csa-heading-disk {
-  --csa-heading-disk-size: clamp(2rem, 3vw, 3.125rem);
+  --csa-heading-disk-size: clamp(1.3rem, 3vw, 3.125rem);
   width: var(--csa-heading-disk-size);
   height: var(--csa-heading-disk-size);
-  top: clamp(1rem, 2.6vw, 2.5rem);
-  right: clamp(1.1rem, 4vw, 3rem);
+  top: clamp(-1.6rem, -2.4vw, -0.85rem);
+  right: clamp(2rem, 6vw, 5rem);
 }
 
 
 @media (max-width: 640px) {
+  .csa-earth-section {
+    min-height: auto;
+    padding: clamp(2.4rem, 8vw, 3.2rem) 0 clamp(2.7rem, 9vw, 3.6rem);
+  }
+
   .csa-section-heading {
     --csa-heading-size: clamp(3rem, 15vw, 5.5rem);
-    padding-block: 1.25rem;
+    padding-block: clamp(1rem, 5vw, 1.4rem);
   }
 
   .csa-section-heading-title {
@@ -236,12 +236,14 @@ section[id] {
   }
 
   .csa-heading-dino {
+    --csa-heading-dino-size: clamp(1rem, 6vw, 1.75rem);
     right: clamp(1.5rem, 8vw, 3.5rem);
   }
 
   .csa-heading-disk {
-    top: 0.85rem;
-    right: 0.85rem;
+    --csa-heading-disk-size: clamp(1.1rem, 6vw, 1.75rem);
+    top: clamp(-1.1rem, -4vw, -0.55rem);
+    right: clamp(1.4rem, 9vw, 2.6rem);
   }
 }
 

@@ -27,7 +27,6 @@
 
 .container {
   color: var(--text-primary);
-  padding-bottom: 180px;
 }
 
 .resources-heading {
@@ -111,17 +110,6 @@ a {
   height: 40px;
 }
 
-@media(min-width: 540px){
-  .dinosaur-logo {
-  display: block;
-  position: absolute;
-  right:8%;
-  width: 30px;
-  margin-top: 47px;
-}
-
-}
-
 @media (min-width: 768px) {
   .resources-heading {
     --csa-heading-size: 100px;
@@ -154,10 +142,6 @@ a {
     padding-right: 30px;
   }
 
-  .dinosaur-logo {
-    width: 40px;
-    margin-top: 87px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -186,14 +170,4 @@ a {
     right: 140px;
   }
 
-  .dinosaur-logo {
-    width: 70px;
-    margin-top: 85px;
-  }
 } 
-
-@media (min-width: 1050px) {
-  .dinosaur-logo{
-    display: block;
-  }
-}
