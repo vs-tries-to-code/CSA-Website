@@ -9,6 +9,59 @@
   color: var(--csa-earth-text);
 }
 
+/* .title {
+    font-size: 130px;
+  }
+
+.title-section {
+  --heading-size: clamp(3.5rem, 14vw, 10rem);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  width: 100%;
+  font-size: var(--heading-size);
+}
+
+.title-section::before,
+.title-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-text);
+  font-size: inherit;
+}
+
+.title-section::before { 
+  top: 50%;
+  transform: translateY(-0.28em);
+}
+
+.title-section::after { 
+  top: 50%;
+  transform: translateY(0.15em);
+}
+
+.title-frame {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.line {
+  width: 1px;
+  background: linear-gradient(to bottom,
+      var(--text-secondary),
+      var(--text-primary),
+      var(--text-secondary));
+  flex-shrink: 0; */
 .help-heading {
   --csa-heading-size: clamp(3.5rem, 14vw, 10rem);
 }
@@ -44,6 +97,16 @@
     align-items: center;
     gap: 2rem;
   }
+
+  .title {
+  font-family: var(--sans);
+  font-size: 70px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 }
 .contact {
   display: flex;

@@ -1,5 +1,3 @@
-/* Resource section styles*/
-
 :root {
   --text-primary: #202020;
   --text-secondary: var(--csa-earth-bg);
@@ -14,19 +12,12 @@
   box-sizing: border-box;
 }
 
-/* body {
-  /* margin: 0; 
+.container {
+  position: relative;
+  background-color: var(--resources-bg);
   font-family: var(--sans);
   color: var(--text-primary);
-  background-color: var(--resources-bg);
-} */
-
-#root {
-  min-height: 100vh;
-}
-
-.container {
-  color: var(--text-primary);
+  padding-bottom: 140px;
 }
 
 .resources-heading {
@@ -52,7 +43,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   background-color: var(--resources-bg-secondary);
   margin-bottom: 2px;
 }
@@ -106,14 +96,6 @@ a {
   flex-shrink: 0;
 }
 
-
-.arrow {
-  padding-right: 22px;
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-}
-
 @media (min-width: 768px) {
   .resources-heading {
     --csa-heading-size: clamp(5rem, 10vw, 6.25rem);
@@ -133,19 +115,6 @@ a {
   .sub-resource-name {
     font-size: 25px;
   }
-
-  .arrow-container{
-    position: absolute;
-    width: 100px;
-    right: 0;
-  }
-
-  .arrow {
-    width: 66px;
-    height: 66px;
-    padding-right: 30px;
-  }
-
 }
 
 @media (min-width: 1024px) {
@@ -163,15 +132,6 @@ a {
 
   .sub-resource-name {
     font-size: 32px;
-  }
-
-  .arrow-container{
-    position: absolute;
-    width: 130px;
-  }
-  .arrow {
-    width: 77px;
-    right: 140px;
   }
 
 } 

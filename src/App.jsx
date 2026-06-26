@@ -2,7 +2,7 @@ import HeroArtwork from "./components/home/HeroArtwork/HeroArtwork";
 import Navbar from "./components/home/Navbar/Navbar";
 import AlumniInsights from "./components/AlumniInsights/AlumniInsights";
 import Placements from "./components/Placements/Placements";
-import Resources from "./components/home/Resource/Resources";
+import Resources from "./components/Resource/Resources";
 import Help from "./components/Help/help";
 import "./styles.css";
 
