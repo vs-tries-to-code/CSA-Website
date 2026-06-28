@@ -39,14 +39,16 @@ function App() {
 
         <HeroArtwork />
       </section>
-
+      
+      <section id="achievements">
+        <Achievements />
+      </section>
+      
       <section id="placements">
         <Placements />
         <AlumniInsights />
       </section>
-            <section id="achievements">
-        <Achievements />
-      </section>
+            
       <section id="resources">
         <Resources />
       </section>
