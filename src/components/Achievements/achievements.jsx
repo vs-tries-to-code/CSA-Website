@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./achievements.css";
-import achievement1 from "../../assets/achievements1.png"
 
 const achievements = [
      {
@@ -9,7 +8,7 @@ const achievements = [
     category: "Research Paper Publication",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievement1,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 2,
@@ -17,7 +16,7 @@ const achievements = [
     category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievement1,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 3,
@@ -25,7 +24,7 @@ const achievements = [
     category: "Hackathon Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievement1,
+    image: "/src/assets/achievements1.png",
   },
    {
     id: 4,
@@ -33,7 +32,7 @@ const achievements = [
     category: "Coding Competition Winner",
     description:
       "We are incredibly proud of our 2nd-year CS student for co-authoring a research paper in the prestigious Journal of Systems Architecture (JSA). The paper explores metaheuristic approaches for co-scheduling tasks on shared bus-based heterogeneous platforms.",
-    image: achievement1,
+    image: "/src/assets/achievements1.png",
   },
 
 ];
